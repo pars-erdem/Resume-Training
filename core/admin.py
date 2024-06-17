@@ -6,5 +6,8 @@ class GeneralSettingsAdmin(admin.ModelAdmin):
     list_display = ['name', 'description','parameter','updated_date', 'created_date']
     search_fields = ['name', 'description']
     list_editable = ['description','parameter']
-    class Meta:
-        model = GeneralSetting
+@admin.register(ImageSetting)
+class ImageSettingAdmin(admin.ModelAdmin):
+    list_display = ['name', 'description', 'file', 'updated_date', 'created_date']
+    search_fields = ['name', 'description']
+    list_editable = ['description', 'file']
