@@ -17,12 +17,14 @@
                                 <h4>{{ home_banner_title }}</h4>
                                 <p>{{ home_banner_description }}</p>
                                 <ul class="list basic_info">
-                                    <li><a href="mailto:businessplan@donald.com"><i class="lnr lnr-envelope"></i> businessplan@donald</a></li>
+                                    <li><a href="mailto:businessplan@donald.com"><i class="lnr lnr-envelope"></i>
+                                        businessplan@donald</a></li>
                                 </ul>
                                 <ul class="list personal_social">
-                                    <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                    {% for link in links %}
+                                        <li><a href="{{ link.link }}" target="_blank">{{ link.icon|safe }}</a></li>
+
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -44,25 +46,26 @@
                     <div class="welcome_text">
                         <h4>About Myself</h4>
                         <p>{{ about_myself_welcome }}</p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="tools_expert">
                         <div class="skill_main">
-                            
-                        {% for skill in skills %}
-                            <div class="skill_item">
-                                <h4>{{ skill.name }} <span class="counter">{{ skill.percentage }}</span>%</h4>
-                                <div class="progress_br">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.order }}"
-                                             aria-valuemin="0" aria-valuemax="100"></div>
+
+                            {% for skill in skills %}
+                                <div class="skill_item">
+                                    <h4>{{ skill.name }} <span class="counter">{{ skill.percentage }}</span>%</h4>
+                                    <div class="progress_br">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"
+                                                 aria-valuenow="{{ skill.order }}"
+                                                 aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endfor %}
-                        
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
@@ -92,11 +95,11 @@
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p></p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br/>Santa monica, Los angeles</p>
+                                        <h4></h4>
+                                        <p><br/></p>
                                     </div>
                                 </div>
                             </li>
@@ -104,11 +107,11 @@
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p></p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br/>Santa monica, Los angeles</p>
+                                        <h4></h4>
+                                        <p><br/></p>
                                     </div>
                                 </div>
                             </li>
@@ -116,11 +119,11 @@
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p></p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br/>Santa monica, Los angeles</p>
+                                        <h4></h4>
+                                        <p><br/></p>
                                     </div>
                                 </div>
                             </li>
@@ -132,11 +135,11 @@
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p></p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br/>Santa monica, Los angeles</p>
+                                        <h4></h4>
+                                        <p><br/></p>
                                     </div>
                                 </div>
                             </li>
@@ -144,11 +147,11 @@
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p></p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br/>Santa monica, Los angeles</p>
+                                        <h4></h4>
+                                        <p><br/></p>
                                     </div>
                                 </div>
                             </li>
@@ -156,11 +159,11 @@
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p></p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br/>Santa monica, Los angeles</p>
+                                        <h4></h4>
+                                        <p><br/></p>
                                     </div>
                                 </div>
                             </li>
@@ -170,4 +173,5 @@
             </div>
         </div>
     </section>
+
 {% endblock %}

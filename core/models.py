@@ -76,3 +76,39 @@ class Skill(AbstractModel):
     )
     def __str__(self):
         return f"Skill: {self.name}"
+class SocialMedia(AbstractModel):
+    link=models.URLField(
+        max_length=254,
+        blank=True,
+        verbose_name="url",
+        default=''
+    )
+    icon=models.CharField(
+        max_length=254,
+        blank=True,
+        verbose_name="icon",
+        default=''
+    )
+    def __str__(self):
+        return f"Social:{self.link}"
+class Document(AbstractModel):
+    slug = models.SlugField(
+        max_length=254,
+        default='',
+        blank=True,
+        verbose_name="Slug"
+        )
+    file = models.FileField(
+        max_length=254,
+        default='',
+        blank=True,
+        verbose_name="documents/",
+        )
+    button_text=models.CharField(
+        max_length=254,
+        default='',
+        blank=True,
+        verbose_name="Button Text"
+    )
+    def __str__(self):
+        return f"Document: {self.slug}"

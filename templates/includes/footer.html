@@ -20,13 +20,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         					</div>
         					<p>Let us be social</p>
         					<ul class="list">
-        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                {% for link in links %}
+                                    <li><a href="{{ link.link }}" target="_blank">{{ link.icon|safe }}</a></li>
+
+                                {% endfor %}
+                            
         					</ul>
         				</aside>
         			</div>
         		</div>
         	</div>
         </footer>
+{% include 'includes/scripts.html' %}
