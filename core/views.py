@@ -4,6 +4,15 @@ from core.models import GeneralSetting, ImageSetting, Skill, SocialMedia,Documen
 
 
 # Create your views here.
+def layout(req):
+    documents = Document.objects.all()
+    links = SocialMedia.objects.all()
+    context = {
+        'documents': documents,
+        'links': links,
+
+    }
+    return context
 def index(req):
     site_title = GeneralSetting.objects.get(name='site_title').parameter
     home_banner_name = GeneralSetting.objects.get(name='home_banner_name').parameter
@@ -17,7 +26,7 @@ def index(req):
     ##SKILLS
     skills = Skill.objects.all()
     ##links
-    links = SocialMedia.objects.all()
+
     #Documents
     documents = Document.objects.all()
     context = {
@@ -29,8 +38,6 @@ def index(req):
         'about_myself_footer': about_myself_footer,
         'home_banner_image': home_banner_image,
         'skills': skills,
-        'links': links,
-        'documents':documents
     }
     return render(req, 'index.html', context)
 def redirect_url(request,slug):
